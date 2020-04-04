@@ -7,3 +7,9 @@ Example for spring + springMVC + mybatis
 ```shell script
 $ mvn liquibase:update
 ```
+
+## package war file
+
+```shell script
+$ mvn war:war
+```
