@@ -2,7 +2,7 @@
 
 Example for spring + springMVC + mybatis
 
-## initial database data
+## initial database
 
 ```shell script
 $ mvn liquibase:update
