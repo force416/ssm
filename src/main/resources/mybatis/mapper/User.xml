@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.eric.ssm.dao.UserDao">
+	<resultMap id="userMap" type="org.eric.ssm.dao.entity.User">
+		<id property="id" column="id" />
+		<result property="username" column="username"/>
+	</resultMap>
+
+    <select id="findAllUsers" resultMap="userMap">
+		select * from users
+	</select>
+
+	<select id="getUserById" resultMap="userMap">
+		select * from users
+		where id=#{id}
+	</select>
+
+	<insert id="insertUser"
+			parameterType="org.eric.ssm.dao.entity.User"
+			useGeneratedKeys="true"
+			keyProperty="id"
+			keyColumn="id">
+		INSERT INTO users (username) VALUES (#{username})
+	</insert>
+</mapper>
